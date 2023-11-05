@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 import pickle
+from flask import Flask, request, render_template
 
 
 # recommend function
@@ -45,5 +46,8 @@ if application.button("Recommend"):
             application.image(poster[index])
 
 
+application = Flask(__name__)
+app  = application
 
-
+if __name__=='__main__':
+    app.run(host='0.0.0.0')
